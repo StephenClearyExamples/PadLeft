@@ -1,2 +1,4 @@
-    dotnet pack -c Release --include-symbols
-    nuget.exe push .\StephenClearyExamples.PadLeft.1.0.0.nupkg -Source https://www.nuget.org/api/v2/package
+    dotnet restore
+	dotnet build /p:ci=true /p:Configuration=Release
+	dotnet pack -c Release --no-build
+    nuget.exe push .\StephenClearyExamples.PadLeft.1.1.1.nupkg -Source https://www.nuget.org/api/v2/package
